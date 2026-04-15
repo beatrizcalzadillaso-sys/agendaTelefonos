@@ -27,6 +27,11 @@ public class CListaTelefono {
 	}
 	
 	
+	/**
+	 * Busca por telefono para eliminar el registro
+	 * @param int telefono
+	 * @return boolean
+	 */
 	public boolean eliminar (String tel) {
 		boolean eliminado = false;
 		
@@ -43,7 +48,11 @@ public class CListaTelefono {
 		return eliminado;
 	}
 	
-	
+	/**
+	 * Devuelve la posicion en la agenda del nombre pasado por parametro 
+	 * @param nombre
+	 * @return
+	 */
 	public int buscar (String nombre) {
 		int posicion = -1;
 		

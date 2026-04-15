@@ -16,9 +16,10 @@ public class Agenda {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		CListaTelefono listaTel= new CListaTelefono();
+		int selected;
 		
 		do {
-			int selected = mostrarMenu();
+			selected = mostrarMenu();
 			
 			switch (selected) {
 				case 1:
@@ -31,13 +32,13 @@ public class Agenda {
 					annadir(listaTel);
 					break;
 				case 4:
-					eliminar(listaTel);
+					borrar(listaTel);
 					break;
 				case 5:
 					salir();
 					break;
 			}
-		} while(selected==5);
+		} while(selected!=5);
 	}
 
 	private static void salir() {
@@ -45,12 +46,15 @@ public class Agenda {
 		
 	}
 
-	private static void eliminar(listaTel) {
+	private static void borrar(CListaTelefono listaTel) {
 		System.out.println("Introduzca el telefono del usuario a eliminar");
 		String telefono = teclado.nextLine();
 		
-		if () {
-			
+		if (listaTel.eliminar(telefono)) {
+			System.out.println("El telefono ha sido eliminado");
+		}
+		else {
+			System.out.println("El telefono introducido no existe");
 		}
 	}
 
@@ -86,7 +90,7 @@ public class Agenda {
 			System.out.println("Nombre no encontrado");
 		} 
 		else {
-			listaTel.registro(ind);
+			System.out.println(listaTel.registro(ind).toString()); 
 		}
 		
 	}
